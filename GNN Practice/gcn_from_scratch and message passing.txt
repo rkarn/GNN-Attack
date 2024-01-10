@@ -1,0 +1,6 @@
+https://github.com/zjost/blog_code/tree/master/gcn_numpy  
+two youtube videos link available that explains those jupyter notebook file.
+https://www.youtube.com/watch?v=ijmxpItkRjc
+https://www.youtube.com/watch?v=8qTnNXdkF1Q
+
+nice intro to the GNN: https://www.youtube.com/watch?v=2KRAOZIULzw
