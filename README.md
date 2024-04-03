@@ -5,6 +5,7 @@
 - Their comparisions are also availabel.
 - They are in `GNN_Practice` folder.
 - Backdoor attack is also simulated using `cora` dataset.
+- TO DO: Run the code from `https://github.com/sharc-lab/DGNN-Booster`  because this is the one that has been used for hardware implementation.
 
 ## Hardware Implementation:
 - HLS using Vivado, the source is taken from `https://github.com/sharc-lab/DGNN-Booster`.
@@ -14,3 +15,5 @@
 - Run the code `vivado_hls -f script_EolveGCN.tcl` from that folder.
 - The synthesis step is successfully completed. IP export step failed.
 - Nevertheless the HDLs are generated in `EvolveGCN_final_100/solution3/impl/ip/hdl/verilog` folder.
+- Then the RTL synthesis is also done sucessfully. Please refer to the folder `RTL_project` in the `DGNN-Booster`.
+- TO DO: THe implementation, bit-stream generation, loading, and verification on the FPGA.
