@@ -1,6 +1,6 @@
-# Graph Neural Network Software & Hardware Implementation.
+# Graph Neural Network
 
-Backdoor Attack:
+## Backdoor Attack:
 - Backdoor attack is simulated using `cora` dataset in `Backdoored GNN.ipynb`.
 - Twelve different mechanism of poisoning backdoor is shown. THey are as follows:
   - Edge Insertion/Deletion
@@ -16,12 +16,10 @@ Backdoor Attack:
   - Attribute Injection
   - Temporal Graph Poisoning
 
-## Software Implementation:
+## Baseline Software Implementation for get started:
 - Several implementations available using DGL, Pytorch, and from scratch.
 - Their comparisions are also availabel.
 - They are in `GNN_Practice` folder.
-
-
 
 ## Hardware Implementation:
 - HLS using Vivado, the source is taken from `https://github.com/sharc-lab/DGNN-Booster`.
