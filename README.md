@@ -16,12 +16,12 @@
   - Attribute Injection
   - Temporal Graph Poisoning
 
-## Baseline Software Implementation for get started:
+#### Baseline Software Implementation for get started:
 - Several implementations available using DGL, Pytorch, and from scratch.
 - Their comparisions are also availabel.
 - They are in `GNN_Practice` folder.
 
-## Hardware Implementation:
+#### Hardware Implementation:
 - HLS using Vivado, the source is taken from `https://github.com/sharc-lab/DGNN-Booster`.
 - There are a number of changes needed. We perform those and the updated code for a `DGNN-booster1-EvolveGCN.cpp` is run.
 - Also required to do some changes in `script_EolveGCN.tcl`.
