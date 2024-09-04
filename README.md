@@ -1,7 +1,10 @@
 # Graph Neural Network
 
 ## Backdoor Attack:
-- Backdoor attack is simulated using `cora` dataset in `Backdoored GNN.ipynb`.
+- Backdoor attack is simulated using in `Backdoored GNN (Cora dataset).ipynb` and `Backdoored GNN (Amazon Co-purchase Network).ipynb`.
+- Two datasets have been used
+  - `Cora`
+  - `Amazon Co-purchase Network`
 - Twelve different mechanism of poisoning backdoor is shown. THey are as follows:
   - Edge Insertion/Deletion
   - Node Injection
