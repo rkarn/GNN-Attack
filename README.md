@@ -18,6 +18,8 @@
   - Adaptive Backdoor Triggering
   - Attribute Injection
   - Temporal Graph Poisoning
+  
+  The plots showing confusion matrix, degradation on class accuracies, along with clean model implementation for both the datasets are available in the `plots` folder.
 
 #### Baseline Software Implementation for get started:
 - Several implementations available using DGL, Pytorch, and from scratch.

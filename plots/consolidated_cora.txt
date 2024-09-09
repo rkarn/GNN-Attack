@@ -1,0 +1,51 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Data
+class_labels = ["Case Based", "Genetic Algorithms", "Neural Networks", "Probabilistic Methods", "Reinforcement Learning", "Rule Learning", "Theory"]
+poisoning_types = [
+    "Feature Manipulation", "Edge Manipulation", "Node Injection", "Subgraph Trigger Insertion",
+    "Graph Structure Poisoning", "Label Manipulation", "Model Params Manipulation", "Graph Sampling",
+    "Mix Clean Poisoned", "Adaptive Backdoor Trigger", "Attributes Injection", "Temporal Graph Poisoning"
+]
+data = [
+    [7.18, 3.63, 1.95, 37.77, 4.97, 32.4, 4.9],
+    [1.91, 6.1, 2.72, 6.87, 2.51, 1.94, -1.17],
+    [-8.21, 2.59, -0.27, 4.73, -0.58, -2.93, 9.35],
+    [5.07, 1.16, 1.95, 0.58, 4.15, 0.73, 0.85],
+    [44.47, 41.28, 45.23, 64.12, 55.3, -19.49, 68.67],
+    [30.35, 15.02, 35.42, 27.53, 12.81, 14.28, 28.98],
+    [8.96, 11.57, 12.02, 25.87, 13.53, 3.99, 5.62],
+    [13.51, 4.86, 14.3, 5.07, 21.35, -5.32, 27.16],
+    [28.46, 35.75, 45.69, 39.47, 26.02, 8.66, 31.84],
+    [13.51, 3.63, 1.95, 0.13, 4.97, 9.21, 0.85],
+    [-4.42, 1.16, 3.5, 11.82, -0.77, 14.05, 2.87],
+    [11.4, 6.1, 15.08, 19.92, 12.34, 44.31, 17.04]
+]
+
+# Plotting
+fig, ax = plt.subplots(figsize=(10, 8))
+
+x = np.arange(len(poisoning_types))
+width = 0.1  # the width of the bars
+
+# Plot each class label
+for i, class_label in enumerate(class_labels):
+    values = [data[j][i] for j in range(len(poisoning_types))]
+    ax.bar(x + i*width, values, width, label=class_label)
+
+# Add some text for labels, title and custom x-axis tick labels, etc.
+ax.set_xlabel('Poisoning Types', fontsize=12)
+ax.set_ylabel('$ADR_{i\'s}$ Values', fontsize=12)
+ax.set_title('Different Poisoning Techniques on Cora Dataset', fontsize=12)
+ax.set_xticks(x + width * (len(class_labels) - 1) / 2)
+ax.set_xticklabels(poisoning_types, rotation=45, ha='right', fontsize=12)
+ax.grid(linestyle=':', color='yellow')
+ax.set_yticks([-20,-10,0,10,20,30,40,50,60,70,80])
+ax.legend(title="Classes",fontsize=12)
+
+fig.tight_layout()
+
+plt.savefig('consolidated_cora.pdf')
+
+plt.show()
