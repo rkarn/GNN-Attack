@@ -1,0 +1,63 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Data
+class_labels = [
+    "Desktop Computers",
+    "Laptops",
+    "Tablets",
+    "Computer Components",
+    "Computer Accessories",
+    "Monitors",
+    "Networking Products",
+    "Printers",
+    "Scanners",
+    "Software"
+]
+
+poisoning_types = [
+    "Feature Manipulation", "Edge Manipulation", "Node Injection", "Subgraph Trigger Insertion",
+    "Graph Structure Poisoning", "Label Manipulation", "Model Params Manipulation", "Graph Sampling",
+    "Mix Clean Poisoned", "Adaptive Backdoor Trigger", "Attributes Injection", "Temporal Graph Poisoning"
+]
+data = [
+    [99.98, 99.76, 100.0, 98.96, 99.89, 100.0, 97.04, 100.0, 99.93, 99.03],
+    [-9.61, -3.87, 0.51, 99.37, 0.08, 31.97, 100.0, -7.23, -3.92, 100.0],
+    [-9.68, -9.15, -0.19, -8.92, 2.25, -1.22, -8.61, -6.49, -0.81, -12.47],
+   [-6.03, -13.08, 3.79, -26.78, 4.9, 100.0, -48.24, -5.29, -2.46, -3.17],
+   [100.0, 92.53, 100.0, 100.0, -2.11, 100.0, 100.0, 100.0, 4.05, 100.0],
+    [100.0, -4.93, 0.65, 88.05, 2.85, -4.77, 98.28, -3.2, -2.19, 87.69],
+   [-13.27, -3.26, 0.67, -24.53, 1.32, 7.26, -41.18, -4.29, 2.75, -16.11],
+    [100.0, 97.14, 100.0, 100.0, 100.0, 100.0, 70.07, 100.0, 100.0, 100.0],
+    [100.0, 9.17, 14.87, 100.0, 97.1, 100.0, -70.25, 69.7, 62.22, 100.0],
+    [100.0, -4.1, 5.74, 98.48, 100.0, 66.2, -37.31, 56.48, 38.56, 97.59],
+     [100.0, 100.0, 100.0, 98.56, 99.02, -0.31, 100.0, -4.75, 99.75, 100.0],
+    [95.33, 98.6, 87.72, 31.86, 99.68, 100.0, 100.0, 100.0, 100.0, 100.0]
+]
+
+# Plotting
+fig, ax = plt.subplots(figsize=(10, 8))
+
+x = np.arange(len(poisoning_types))
+width = 0.1  # the width of the bars
+
+# Plot each class label
+for i, class_label in enumerate(class_labels):
+    values = [data[j][i] for j in range(len(poisoning_types))]
+    ax.bar(x + i*width, values, width, label=class_label)
+
+# Add some text for labels, title and custom x-axis tick labels, etc.
+ax.set_xlabel('Poisoning Types', fontsize=12)
+ax.set_ylabel('$ADR_{i\'s}$ Values', fontsize=12)
+ax.set_title('Different Poisoning Techniques on Amazon Co-purchase Network Dataset', fontsize=12)
+ax.set_xticks(x + width * (len(class_labels) - 1) / 2)
+ax.set_xticklabels(poisoning_types, rotation=45, ha='right', fontsize=12)
+ax.grid(linestyle=':', color='yellow')
+ax.set_yticks([-80,-70,-60,-50,-40,-30,-20,-10,0,10,20,30,40,50,60,70,80,90,100])
+ax.legend(title="Classes", loc='lower left', ncol=3,fontsize=12)
+
+fig.tight_layout()
+
+plt.savefig('consolidated_Amazon.pdf')
+
+plt.show()
